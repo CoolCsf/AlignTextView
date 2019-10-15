@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AlignTextView">
+        <attr name="text" format="string"/>
+        <attr name="pre_text" format="string"/>
+        <attr name="pre_color" format="color"/>
+        <attr name="color" format="color"/>
+        <attr name="font_size" format="dimension"/>
+        <attr name="total_length" format="dimension"/>
+    </declare-styleable>
+</resources>
