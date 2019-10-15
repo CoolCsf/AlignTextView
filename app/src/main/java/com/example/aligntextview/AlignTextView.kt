@@ -3,9 +3,11 @@ package com.example.aligntextview
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import java.lang.NullPointerException
+import kotlin.math.ceil
 
 class AlignTextView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -16,7 +18,8 @@ class AlignTextView @JvmOverloads constructor(
     private var preTextColor:Int=0
     var fontSize : Float = 0.0f
     var totalLength :Float = 0.0f
-
+    private var textPaint :Paint
+    private var preTextPaint :Paint
     init {
         val attr =  context.obtainStyledAttributes(attrs,R.styleable.AlignTextView)
         attr?.let {
@@ -28,11 +31,25 @@ class AlignTextView @JvmOverloads constructor(
             totalLength = attr.getDimension(R.styleable.AlignTextView_total_length,100f)
             attr.recycle()
         }
+        textPaint = Paint().apply {
+            this.color=textColor
+            this.textSize=fontSize
+        }
+        preTextPaint = Paint().apply {
+            this.color=preTextColor
+            this.textSize=fontSize
+        }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val fm = textPaint.fontMetrics
+        val height = ceil(fm.descent-fm.ascent.toDouble()) // 获得文字的高度
+        setMeasuredDimension(totalLength.toInt(),height.toInt())
     }
+
+//    private fun getWiidth():Int{
+//        return totalLength
+//    }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
