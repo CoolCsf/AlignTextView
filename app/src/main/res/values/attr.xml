@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AlignTextView">
-        <attr name="text" format="string"/>
-        <attr name="pre_text" format="string"/>
-        <attr name="pre_color" format="color"/>
-        <attr name="color" format="color"/>
-        <attr name="font_size" format="dimension"/>
-        <attr name="total_length" format="dimension"/>
+        <attr name="text" format="string" />
+        <attr name="pre_text" format="string" />
+        <attr name="pre_color" format="color" />
+        <attr name="color" format="color" />
+        <attr name="font_size" format="dimension" />
+        <attr name="max_length" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="AutoAlignLinearLayout">
+        <attr name="ll_child_font_size" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="AutoAlignRelativeLayout">
+        <attr name="rl_child_font_size" format="dimension" />
     </declare-styleable>
 </resources>

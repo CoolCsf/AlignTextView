@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.aligntextview.AutoAlignLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.aligntextview.AutoAlignRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:ll_child_font_size="15sp">
+    app:rl_child_font_size="15sp">
 
     <com.example.aligntextview.AlignTextView
+        android:id="@+id/atv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:color="@color/colorPrimaryDark"
@@ -15,26 +15,34 @@
         app:text="个人姓名这个" />
 
     <com.example.aligntextview.AlignTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/atv2"
+        android:layout_below="@id/atv1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:color="@color/colorPrimaryDark"
+        app:font_size="15sp"
+        app:max_length="7"
         app:pre_color="@android:color/holo_red_dark"
         app:pre_text="为啥"
         app:text="手机号码" />
 
     <com.example.aligntextview.AlignTextView
+        android:id="@+id/atv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/atv2"
         app:color="@color/colorPrimaryDark"
         app:pre_color="@android:color/holo_red_dark"
         app:pre_text="*"
         app:text="家庭住址" />
 
     <com.example.aligntextview.AlignTextView
+        android:id="@+id/atv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/atv3"
         app:color="@color/colorPrimaryDark"
         app:pre_color="@android:color/holo_red_dark"
         app:text="身份证号码" />
 
-</com.example.aligntextview.AutoAlignLinearLayout>
+</com.example.aligntextview.AutoAlignRelativeLayout>
