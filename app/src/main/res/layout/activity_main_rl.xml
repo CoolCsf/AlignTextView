@@ -16,6 +16,7 @@
             app:color="@color/colorPrimaryDark"
             app:pre_color="@android:color/holo_red_dark"
             app:pre_text="*"
+            app:max_length="11"
             app:text="个人姓名这个" />
     </LinearLayout>
 
@@ -26,7 +27,6 @@
         android:layout_below="@id/atv1"
         app:color="@color/colorPrimaryDark"
         app:font_size="15sp"
-        app:max_length="7"
         app:pre_color="@android:color/holo_red_dark"
         app:pre_text="为啥"
         app:text="手机号码" />
