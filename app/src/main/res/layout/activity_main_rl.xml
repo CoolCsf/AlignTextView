@@ -5,20 +5,25 @@
     android:layout_height="match_parent"
     app:rl_child_font_size="15sp">
 
-    <com.example.aligntextview.AlignTextView
+    <LinearLayout
         android:id="@+id/atv1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:color="@color/colorPrimaryDark"
-        app:pre_color="@android:color/holo_red_dark"
-        app:pre_text="*"
-        app:text="个人姓名这个" />
+        android:layout_height="wrap_content">
+
+        <com.example.aligntextview.AlignTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:color="@color/colorPrimaryDark"
+            app:pre_color="@android:color/holo_red_dark"
+            app:pre_text="*"
+            app:text="个人姓名这个" />
+    </LinearLayout>
 
     <com.example.aligntextview.AlignTextView
         android:id="@+id/atv2"
-        android:layout_below="@id/atv1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/atv1"
         app:color="@color/colorPrimaryDark"
         app:font_size="15sp"
         app:max_length="7"

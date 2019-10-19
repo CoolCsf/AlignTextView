@@ -1,6 +1,8 @@
 package com.example.aligntextview
 
+import android.view.View
 import android.view.ViewGroup
+import kotlin.math.max
 
 fun AutoAlignLinearLayout.setMaxLengthAndFontSize() {
     this.setSetAutoAlign(fontSize)
@@ -11,15 +13,33 @@ fun AutoAlignRelativeLayout.setMaxLengthAndFontSize() {
 }
 
 private fun ViewGroup.setSetAutoAlign(fontSize: Float) {
-    val maxLength = (0..childCount)
-        .map { getChildAt(it) }
-        .filterIsInstance(AlignTextView::class.java)
-        .maxBy { it.getAllTextLength() }?.getAllTextLength() ?: 0
+    val maxLength = this.getMaxLength()
+    this.setAlignTextViewSize(fontSize, maxLength)
+}
+
+private fun ViewGroup.getMaxLength(): Int {
+    var maxLength = 0
     (0..childCount)
         .map { getChildAt(it) }
-        .filterIsInstance(AlignTextView::class.java)
         .forEach {
-            it.totalLength = maxLength
-            it.setFontSize(fontSize)
+            if (it is ViewGroup) {
+                maxLength = it.getMaxLength()
+            } else if (it is AlignTextView) {
+                maxLength = max(it.getAllTextLength(), maxLength)
+            }
+        }
+    return maxLength
+}
+
+private fun ViewGroup.setAlignTextViewSize(fontSize: Float, maxLength: Int) {
+    (0..childCount)
+        .map { getChildAt(it) }
+        .forEach {
+            if (it is ViewGroup) {
+                it.setAlignTextViewSize(fontSize, maxLength)
+            } else if (it is AlignTextView) {
+                it.totalLength = maxLength
+                it.setFontSize(fontSize)
+            }
         }
 }
