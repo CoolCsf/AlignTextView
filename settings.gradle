@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name='AlignTextView'
+include ':app', ':aligntextview'
+rootProject.name='app'

@@ -1,4 +1,4 @@
-package com.ccsf.aligntextview
+package com.ccsf.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
