@@ -1,8 +1,7 @@
-package com.example.aligntextview
+package com.ccsf.aligntextview
 
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 
 class AutoAlignRelativeLayout @JvmOverloads constructor(

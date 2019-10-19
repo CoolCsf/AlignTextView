@@ -1,4 +1,4 @@
-package com.example.aligntextview
+package com.ccsf.aligntextview
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

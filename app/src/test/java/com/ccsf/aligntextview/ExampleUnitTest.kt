@@ -1,4 +1,4 @@
-package com.example.aligntextview
+package com.ccsf.aligntextview
 
 import org.junit.Test
 

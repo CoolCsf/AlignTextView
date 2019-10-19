@@ -1,6 +1,5 @@
-package com.example.aligntextview
+package com.ccsf.aligntextview
 
-import android.view.View
 import android.view.ViewGroup
 import kotlin.math.max
 
