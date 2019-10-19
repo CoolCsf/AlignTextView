@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -33,4 +35,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
+publish {
+    userOrg = 'ccsf' //bintray账户下某个组织id
+    groupId = 'com.ccsf' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'AlignTextView' //项目名称
+    publishVersion = '1.0.0' //版本号
+    desc = 'align textView' //项目介绍，可以不写
+    website = '' //项目主页，可以不写
 }
